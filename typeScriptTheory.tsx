@@ -43,4 +43,28 @@ let fruits: readonly string[] = ['orange','apple','pineapple'];
 
 // ? Функции
 
+	// * тип для параметров указываем явно. Тип, которвый ф-я возвращает
+	// * можно указывать не всегда..
+function say(message:string, authorId: number) {
+		return `${authorId.toString()} say ${message}`;
+}
+// * ф-я всегда что-то возвращает! без return - возвращает undefined(:void)
 
+// ! never 
+	// *если ф-я не выполняется до конца(бесконечный цикл,ошибка) - возвращает never
+	function getPerson(): never{
+		throw new Error('something went wrong..');
+	}
+	const recursionFunc = function(): never {
+		return recursionFunc();
+	}
+
+	// * never у объекта применяется для запрета добавления поля
+	let user: {
+		age?: never;
+		[key:string]: boolean;
+	}
+	user = {
+		// age: 20, нельзя добавить поле age
+		canEdit: true,
+	}
