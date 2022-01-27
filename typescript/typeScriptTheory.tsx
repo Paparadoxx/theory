@@ -68,3 +68,5 @@ function say(message:string, authorId: number) {
 		// age: 20, нельзя добавить поле age
 		canEdit: true,
 	}
+
+	
